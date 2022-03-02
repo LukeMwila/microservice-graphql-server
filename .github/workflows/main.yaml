@@ -45,6 +45,9 @@ jobs:
       # Clone git repository with Helm charts, update and push changes
       - name: Update image tag in Helm git repo 
         run: | 
+          echo Get container image tag from package.json file and store in env variable...
+          CONTAINER_IMAGE_TAG="$(node -e "console.log(require('./package.json').version);")"
+          echo New container image tag: $CONTAINER_IMAGE_TAG
           echo Create temporary folder to clone the repo into...
           TEMP_FOLDER="$(mktemp -d)" 
           echo Clone the repository...
