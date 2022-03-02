@@ -32,7 +32,6 @@ phases:
       - docker build -t lukondefmwila/ecommerce-graphql:$CONTAINER_IMAGE_TAG .
       # Log in to the Docker CLI
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-      - cd ..
   post_build:
     commands:
       # Push the image to Docker hub
