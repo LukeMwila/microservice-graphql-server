@@ -10,10 +10,8 @@ phases:
   pre_build:
     commands:
       # Install helm
-      - curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
-      - chmod 700 get_helm.shaqw12q1  
-      - ./get_helm.sh
-      - helm version
+      - curl -sSL https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+      - helm version --short
       # Install helm datree plugin
       - helm plugin install https://github.com/datreeio/helm-datree
       - helm datree version
