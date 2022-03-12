@@ -55,7 +55,7 @@ phases:
       - echo 'Container image tag updated in graphql/values-dev.yaml'
       # Test configuration
       - helm dependency update .
-      - helm helm datree test . -- --values ./values-dev.yaml
+      - helm datree test . -- --values ./values-dev.yaml
       # Redirect back to root of temporary folder
       - cd ../../
       - git config user.email "lukemwila.tech@gmail.com"
